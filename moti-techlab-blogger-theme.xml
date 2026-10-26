@@ -26,7 +26,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -46,10 +45,7 @@
 
     a:hover { color: #ffffff; }
 
-    img, iframe, video {
-      max-width: 100%;
-    }
-
+    img, iframe, video { max-width: 100%; }
     img { height: auto; }
 
     .site-header {
@@ -215,18 +211,10 @@
     }
 
     .post-body th { background: var(--surface2); }
-
     .post-body .separator { margin: 18px 0; }
-
-    .post-body img {
-      border-radius: 12px;
-    }
-
+    .post-body img { border-radius: 12px; }
     .post-body a { overflow-wrap: anywhere; }
-
-    .post-outer-container {
-      min-width: 0;
-    }
+    .post-outer-container { min-width: 0; }
 
     .blog-pager {
       display: flex;
@@ -243,9 +231,7 @@
       background: var(--surface);
     }
 
-    .sidebar, .sidebar-container {
-      color: var(--muted);
-    }
+    .sidebar, .sidebar-container { color: var(--muted); }
 
     .widget {
       background: var(--surface);
@@ -263,7 +249,6 @@
     }
 
     .widget ul { padding-left: 20px; }
-
     .widget li { margin: 7px 0; }
 
     .widget input, .widget select, .widget textarea,
@@ -318,15 +303,27 @@
       .header-inner { padding: 20px 18px; }
       .brand { font-size: 24px; }
       .nav-links { gap: 14px; }
+
       .hero {
         margin: 18px 12px 0;
         padding: 35px 22px;
         border-radius: 17px;
       }
+
       .hero h1 { letter-spacing: -1px; }
-      .content-wrap { margin: 24px auto; padding: 0 12px; }
-      .blog-posts { grid-template-columns: 1fr; gap: 16px; }
+
+      .content-wrap {
+        margin: 24px auto;
+        padding: 0 12px;
+      }
+
+      .blog-posts {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
       .post-outer { padding: 20px; }
+
       h3.post-title, .post-title { font-size: 21px; }
     }
   ]]></b:skin>
@@ -365,12 +362,12 @@
   <main class='content-wrap'>
     <div class='main-column'>
       <b:section id='main' class='main' maxwidgets='1' showaddelement='no'>
-        <b:widget id='Blog1' type='Blog' title='Blog Posts'
-                  locked='true' version='2' visible='true'>
-          <b:includable id='main' var='this'>
-            <b:include name='super.main'/>
-          </b:includable>
-        </b:widget>
+        <b:widget id='Blog1'
+                  type='Blog'
+                  title='Blog Posts'
+                  locked='true'
+                  version='2'
+                  visible='true'/>
       </b:section>
     </div>
   </main>
