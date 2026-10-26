@@ -1,0 +1,384 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2'
+      class='v2'
+      expr:dir='data:blog.languageDirection'
+      xmlns='http://www.w3.org/1999/xhtml'
+      xmlns:b='http://www.google.com/2005/gml/b'
+      xmlns:data='http://www.google.com/2005/gml/data'
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <meta content='#080d18' name='theme-color'/>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+
+  <b:skin><![CDATA[
+    :root {
+      --bg: #080d18;
+      --surface: #111a2b;
+      --surface2: #172338;
+      --text: #edf3ff;
+      --muted: #9baac2;
+      --accent: #38e0c1;
+      --border: #26364c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    a:hover { color: #ffffff; }
+
+    img, iframe, video {
+      max-width: 100%;
+    }
+
+    img { height: auto; }
+
+    .site-header {
+      background: rgba(8,13,24,.96);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 24px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 27px;
+      font-weight: 850;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      max-width: 1180px;
+      margin: 34px auto 0;
+      padding: 60px 28px;
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(56,224,193,.15), transparent 40%),
+        linear-gradient(135deg, #111d30, #0b1220);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .hero-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      max-width: 760px;
+      margin: 16px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .content-wrap {
+      max-width: 1180px;
+      margin: 36px auto;
+      padding: 0 22px;
+    }
+
+    .main-column { min-width: 0; }
+
+    .blog-posts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .post-outer {
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      overflow-wrap: anywhere;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .post-outer:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56,224,193,.6);
+    }
+
+    h3.post-title, .post-title {
+      font-size: 23px;
+      line-height: 1.35;
+      margin: 0 0 12px;
+      letter-spacing: -.5px;
+    }
+
+    .post-title a { color: var(--text); }
+    .post-title a:hover { color: var(--accent); }
+
+    .post-header, .post-footer, .post-timestamp,
+    .post-author, .post-labels, .post-comment-link {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .post-body {
+      color: #d1daea;
+      line-height: 1.85;
+    }
+
+    .post-body h2, .post-body h3 {
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .post-body blockquote {
+      margin: 20px 0;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface2);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .post-body pre, .post-body code {
+      max-width: 100%;
+      overflow-x: auto;
+      background: #060a12;
+      border-radius: 7px;
+    }
+
+    .post-body pre { padding: 16px; }
+
+    .post-body table {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      border-collapse: collapse;
+    }
+
+    .post-body th, .post-body td {
+      border: 1px solid var(--border);
+      padding: 9px;
+    }
+
+    .post-body th { background: var(--surface2); }
+
+    .post-body .separator { margin: 18px 0; }
+
+    .post-body img {
+      border-radius: 12px;
+    }
+
+    .post-body a { overflow-wrap: anywhere; }
+
+    .post-outer-container {
+      min-width: 0;
+    }
+
+    .blog-pager {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .blog-pager a, .home-link {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+
+    .sidebar, .sidebar-container {
+      color: var(--muted);
+    }
+
+    .widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    .widget h2, .widget-title {
+      color: var(--text);
+      font-size: 17px;
+      margin-top: 0;
+    }
+
+    .widget ul { padding-left: 20px; }
+
+    .widget li { margin: 7px 0; }
+
+    .widget input, .widget select, .widget textarea,
+    input, textarea, select {
+      max-width: 100%;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    button, input[type='submit'] {
+      cursor: pointer;
+      background: var(--accent);
+      color: #061410;
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: 750;
+    }
+
+    .post-labels a {
+      display: inline-block;
+      padding: 3px 9px;
+      margin: 3px;
+      background: var(--surface2);
+      border-radius: 20px;
+    }
+
+    #comments, .comments {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .status-msg-wrap {
+      padding: 14px;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 55px;
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner { padding: 20px 18px; }
+      .brand { font-size: 24px; }
+      .nav-links { gap: 14px; }
+      .hero {
+        margin: 18px 12px 0;
+        padding: 35px 22px;
+        border-radius: 17px;
+      }
+      .hero h1 { letter-spacing: -1px; }
+      .content-wrap { margin: 24px auto; padding: 0 12px; }
+      .blog-posts { grid-template-columns: 1fr; gap: 16px; }
+      .post-outer { padding: 20px; }
+      h3.post-title, .post-title { font-size: 21px; }
+    }
+  ]]></b:skin>
+</head>
+
+<body>
+
+  <header class='site-header'>
+    <div class='header-inner'>
+      <div>
+        <a class='brand' expr:href='data:blog.homepageUrl'>
+          Moti <span>TechLab</span>
+        </a>
+        <div class='tagline'>Technology • Tutorials • Innovation</div>
+      </div>
+
+      <nav class='nav-links'>
+        <a expr:href='data:blog.homepageUrl'>Home</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/Technology&quot;'>Technology</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/Tutorials&quot;'>Tutorials</a>
+      </nav>
+    </div>
+  </header>
+
+  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <section class='hero'>
+      <div class='hero-label'>Welcome to Moti TechLab</div>
+      <h1>Explore Technology.<br/>Build Something Amazing.</h1>
+      <p>
+        Discover technology news, practical tutorials, digital tools
+        and ideas that help you stay ahead.
+      </p>
+    </section>
+  </b:if>
+
+  <main class='content-wrap'>
+    <div class='main-column'>
+      <b:section id='main' class='main' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Blog1' type='Blog' title='Blog Posts'
+                  locked='true' version='2' visible='true'>
+          <b:includable id='main' var='this'>
+            <b:include name='super.main'/>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </main>
+
+  <footer class='site-footer'>
+    <p>© <data:blog.title/> — Technology, ideas and innovation.</p>
+  </footer>
+
+</body>
+</html>
